@@ -37,22 +37,21 @@ const script = $(`script[src^="https://gist.github.com"]`);
 axios(script[0].attribs.src, { adapter })
   .then(result => {
     const { data } = result;
-    const $script = cheerio.load(data);
-    // log(data, $script);
-    // log(data);
-    const body = $script("body").html();
-    // log(eval(body));
-    // log(data);
+    // const $script = cheerio.load(data);
+    // // log(data, $script);
+    // // log(data);
+    // const body = $script("body").html();
+    // // log(eval(body));
+    // // log(data);
 
     const window = new JSDOM(`<body><script>${data}</script></body>`, {
       runScripts: "dangerously"
     }).window;
-    // window.eval(data);
-    log(
-      cheerio
-        .load(window.document.body.innerHTML)("body")
-        .html()
-    );
+
+    const renderedHTML = cheerio
+      .load(window.document.body.innerHTML)("body")
+      .html();
+    log(renderedHTML);
   })
   .then(cleanup)
   .catch(console.error);
