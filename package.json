@@ -1,0 +1,23 @@
+{
+  "name": "jsdom-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./src/index.js",
+    "watch": "nodemon --exec npm start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "cheerio": "^1.0.0-rc.2",
+    "jsdom": "^13.2.0",
+    "jsdom-global": "^3.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  }
+}
